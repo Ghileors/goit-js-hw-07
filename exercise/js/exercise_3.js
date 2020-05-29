@@ -15,3 +15,23 @@ const images = [
         alt: 'Group of Horses Running',
     },
 ];
+
+const galleryRef = document.querySelector('#gallery');
+galleryRef.classList.add('gallery-list');
+
+function ceateElement(arr) {
+    const imagesAsLi = arr.map(item => {
+        const imageAsListItem = document.createElement('li');
+        imageAsListItem.insertAdjacentHTML(
+            'beforeend',
+            `<img src="${item.url}" alt="${item.alt}">`,
+        );
+        imageAsListItem.setAttribute('class', 'gallery-list__item');
+
+        return imageAsListItem;
+    });
+
+    return gallery.append(...imagesAsLi);
+}
+
+console.log(ceateElement(images));
