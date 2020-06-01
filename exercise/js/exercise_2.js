@@ -15,9 +15,8 @@ function ceateElement(arr) {
         const ilstItem = document.createElement('li');
         ilstItem.textContent = item;
         itemsArr.push(ilstItem);
-        listRef.prepend(...itemsArr);
     });
-    return listRef;
+    return listRef.prepend(...itemsArr);
 }
 
-console.log(ceateElement(ingredients));
+ceateElement(ingredients);
