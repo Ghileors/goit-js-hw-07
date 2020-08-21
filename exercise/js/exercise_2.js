@@ -1,22 +1,14 @@
-const ingredients = [
-    'Картошка',
-    'Грибы',
-    'Чеснок',
-    'Помидоры',
-    'Зелень',
-    'Приправы',
-];
+import ingredients from './ingredients.js';
 
 const listRef = document.querySelector('#ingredients');
 
-function ceateElement(arr) {
-    let itemsArr = [];
-    arr.forEach(item => {
-        const ilstItem = document.createElement('li');
-        ilstItem.textContent = item;
-        itemsArr.push(ilstItem);
+const ceateElements = arr => {
+    const items = arr.map(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        return li;
     });
-    return listRef.prepend(...itemsArr);
-}
+    listRef.prepend(...items);
+};
 
-ceateElement(ingredients);
+ceateElements(ingredients);

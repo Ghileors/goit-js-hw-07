@@ -1,11 +1,12 @@
-const categoriesListRef = document.querySelector('#categories');
-const itemListRef = document.querySelectorAll('.item');
-const titleRef = document.querySelector('h2');
+const refs = {
+    list: document.querySelector('#categories'),
+    item: document.querySelectorAll('.item'),
+};
 
-console.log(`В списке ${itemListRef.length} категории.`);
+console.log(`In list ${refs.item.length} categories`);
 
-itemListRef.forEach(item =>
+refs.item.forEach(item =>
     console.log(`
-    - Категория: ${titleRef.textContent}
+    - Категория: ${item.querySelector('h2').textContent}
     - Количество элементов: ${item.querySelectorAll('li').length} `),
 );
